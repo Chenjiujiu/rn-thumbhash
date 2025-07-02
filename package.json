@@ -4,7 +4,6 @@
   "description": "react native thumbhash",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "react-native": "src/index.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -34,5 +33,13 @@
     "react": "^19.1.0",
     "react-native": "^0.80.1",
     "typescript": "5.0.4"
+  },
+  "codegenConfig": {
+    "name": "ThumbHashModule",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.rnthumbhash"
+    }
   }
 }

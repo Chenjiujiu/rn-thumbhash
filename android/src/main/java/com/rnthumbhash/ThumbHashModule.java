@@ -4,29 +4,31 @@ import androidx.annotation.NonNull;
 import android.util.Base64;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Promise;
+import com.facebook.react.module.annotations.ReactModule;
+import com.facebook.react.turbomodule.core.interfaces.TurboModule;
 
-import com.rnthumbhash.generated.NativeThumbHashSpec;
-
-public class ThumbHashModule extends NativeThumbHashSpec implements ReactModuleWithSpec {
-    public static final String NAME = "ThumbHash";
+@ReactModule(name = ThumbHashModule.NAME)
+public class ThumbHashModule extends ReactContextBaseJavaModule implements TurboModule {
+    public static final String NAME = "ThumbHashModule";
 
     public ThumbHashModule(ReactApplicationContext context) {
       super(context);
     }
 
-    @NonNull
     @Override
     public String getName() {
       return NAME;
     }
 
-    @Override
+    @ReactMethod
     public void decodeThumbHash(String base64ThumbHash, Promise promise) {
       try {
         byte[] hash = Base64.decode(base64ThumbHash, Base64.DEFAULT);
@@ -59,7 +61,7 @@ public class ThumbHashModule extends NativeThumbHashSpec implements ReactModuleW
       }
     }
 
-    @Override
+    @ReactMethod
     public void encodeThumbHash(String base64Image, Promise promise) {
       try {
         // base64 解码为 byte[] 图片数据

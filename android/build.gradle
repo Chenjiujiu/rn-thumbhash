@@ -1,31 +1,21 @@
-buildscript {
-  ext {
-    minSdkVersion = 21
-    compileSdkVersion = 33
-    targetSdkVersion = 33
-  }
-  repositories {
-      google()
-      mavenCentral()
-  }
-  dependencies {
+apply plugin: 'com.android.library'
+apply plugin: 'com.facebook.react'
+
+android {
+  namespace "com.rnthumbhash"
+  compileSdk = 33
+
+  defaultConfig {
+    minSdk = 21
+    targetSdk = 33
   }
 }
 
-apply from: new File(
-  ["node", "--print", "require.resolve('react-native/package.json')"]
-  .execute(null, rootDir).text.trim(),
-  "../react-native/react.gradle"
-)
-
-project.ext.react = [
-  codegenDir: new File(
-    ["node", "--print", "require.resolve('react-native-codegen/package.json')"]
-    .execute(null, rootDir).text.trim()
-  ).getParentFile()
-]
+dependencies {
+  implementation "com.facebook.react:react-native:+"
+}
 
 repositories {
-    google()
-    mavenCentral()
+  google()
+  mavenCentral()
 }
