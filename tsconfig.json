@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
+    "target": "ES2017",               // ✅ 推荐，Hermes & Metro 支持得最好
+    "module": "ESNext",
     "declaration": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
-    "outDir": "lib"
+    "outDir": "lib",
+    "types": ["react", "react-native"],
+    "lib": ["es2017"],
+    "skipLibCheck": true
   },
   "include": ["src"]
 }

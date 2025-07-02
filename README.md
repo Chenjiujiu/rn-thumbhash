@@ -20,7 +20,7 @@ const HomeScreen = memo(() => {
 
   return (
     <View>
-      <Image source={{ uri: ba }} style={{ width: 100, height: 100 }} />
+      <Image source={{ uri: imageUrl }} style={{ width: 100, height: 100 }} />
     </View>
   );
 });
