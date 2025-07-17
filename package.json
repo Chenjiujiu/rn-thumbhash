@@ -28,11 +28,11 @@
     "react-native": ">=0.68.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.8",
-    "@types/react-native": "^0.73.0",
-    "react": "^19.1.0",
-    "react-native": "^0.80.1",
-    "typescript": "5.0.4"
+    "@types/react": "^18.0.24",
+    "@types/react-native": "^0.72.0",
+    "react": "^18.2.0",
+    "react-native": "^0.72.6",
+    "typescript": "4.8.4"
   },
   "codegenConfig": {
     "name": "ThumbHashModule",
@@ -41,5 +41,8 @@
     "android": {
       "javaPackageName": "com.rnthumbhash"
     }
+  },
+  "dependencies": {
+    "lru-cache": "^11.1.0"
   }
 }

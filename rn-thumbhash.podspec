@@ -1,12 +1,10 @@
-require "json"
 
 Pod::Spec.new do |s|
   s.name         = "rn-thumbhash"
-  s.version      = "0.1.0"
+  s.version      = "1.1.0"
   s.summary      = "React Native module for ThumbHash decoding"
   s.license      = "MIT"
   s.homepage     = "#readme"
-  s.license      = "MIT"
   s.authors      = "Micas"
 
   s.platforms    = { :ios => min_ios_version_supported }
